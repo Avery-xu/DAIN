@@ -7,7 +7,7 @@ import numpy as np
 import numpy
 import networks
 from my_args import  args
-from scipy.misc import imread, imsave
+from imageio import imread, imsave
 from AverageMeter import  *
 import shutil
 
@@ -71,7 +71,7 @@ if DO_MiddleBurryOther:
     tot_timer = AverageMeter()
     proc_timer = AverageMeter()
     end = time.time()
-    for dir in subdir: 
+    for dir in subdir:
         print(dir)
         os.mkdir(os.path.join(gen_dir, dir))
         arguments_strFirst = os.path.join(MB_Other_DATA, dir, "frame10.png")
@@ -181,6 +181,3 @@ if DO_MiddleBurryOther:
             imsave(arguments_strOut, np.round(item).astype(numpy.uint8))
         shutil.copy(arguments_strSecond, os.path.join(gen_dir, dir, "{:0>4d}.png".format(count)))
         count = count + 1
-
-
-         

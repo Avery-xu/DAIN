@@ -10,7 +10,7 @@ import numpy
 import networks
 from my_args import  args
 
-from scipy.misc import imread, imsave
+from imageio import imread, imsave
 from AverageMeter import  *
 
 torch.backends.cudnn.benchmark = True # to speed up the
